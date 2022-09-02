@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innføring i Programmering: Deleksamen 1 - Feilsøking</title>
+    <link href="styles.css" rel="stylesheet" media="screen" />
+</head>
+<body>
+    <h1 id="text" class="animation">Error</h1>
+    <div id="salute">
+        <div class="before"></div>
+        <div class="after"></div>
+    </div>
+
+    <script>
+        /* 
+         * HER STARTER KODEN DU SKAL ENDRE! IKKE ENDRE NOE OVER DENNE KOMMENTAREN.
+         * Det er kun i denne delen av koden du skal finne og løse opp feil 
+         * for å komme fram til sluttresultatet. Du skal ikke endre noe HTML, men det
+         * kan du må lese HTML-koden underveis for å rydde opp alle feilene i JavaScriptet.
+         */
+
+        //Klargjør variabler for utregning
+        const startingPoint = 255
+        let checksum = 0
+        // Nr 1 Det sto const, og jeg bytta den til let
+        const multiplier = 3
+        //Ditt navn.PS: Bytt denne til ditt navn.
+        // Nr 2 Det var en sånn "/" strek som manglet på setningen over, og jeg måtte legge til en slik det ble to
+        //Selve navnebyttet er ikke en feil som teller mot de 10 feilene du skal finne.
+        const myName = "Aman";
+        // Nr 3 Her la jeg inn to av disse " tegnene ved Aman
+    
+
+        //Klargjør variabel for bygging av tekst
+        let greeting = "myName";
+         // Nr 4 Det sto lett og jeg fjerne den ene "t", og gjorde den om til let
+        const saluteClass = "pyro";
+
+        //Kontroller datatype
+        if(typeof myName === "string") {
+            checksum = startingPoint * multiplier
+            // Nr 5 Det var 3 "M" på slutten av checksum, og jeg fjerna 2 av dem
+        } else {
+            checksum = startingPoint
+        }
+
+        //Kontroller checksum
+        if(checksum !== 765) {
+        // Nr 6 Det var tre = tegn og jeg fjerna den siste
+            greeting = "beklager"
+        } else {
+            greeting = "gratulerer"
+            const output = greeting + ", " + myName + "<br />Du klarte det!"
+            // Nr 7 Greeting hadde tre "e", og jeg fjerna den ene slik det er to 2 "e" igjen.
+            const textElement = document.getElementById("text");
+            // Nr 8 På text som er på slutten der var alle bokstavene store, og jeg gjorde dem små
+            const saluteElement = document.getElementById("salute")
+            // Nr 9 getElementById hadde en stor D på slutten, og jeg gjorde den liten
+            textElement.removeAttribute("class")
+            textElement.innerHTML = output
+            saluteElement.setAttribute("class",saluteClass)
+            // Nr 10 saluteclass hadde en liten c, og gjorde den om til en stor C
+            document.body.setAttribute("class","success")
+        }
+        
+        /*
+         * IKKE ENDRE NOE ETTER DENNE KOMMENTAREN
+         */
+        
+    </script>
+</body>
+</html>
